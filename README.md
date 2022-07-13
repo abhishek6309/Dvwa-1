@@ -2,14 +2,19 @@
 
 # 1 ) Performing Static Application Security Testing Using SonarQube on DVWA ( Damn Vulnerable Web Application):
 
-Download DVWA source code from https://github.com/digininja/DVWA
-Open SonarQube Click on create project and add an project name like " DVWA Source code review "
-Go to With the configuration best suited for you in this we will go manually with GitHub Actions
-we have to Create GitHub Secrets in our repository containing DVWA source code
-Create a " sonar-project.properties " file in your repository and paste the content mentioned in below :
+1 Download DVWA source code from https://github.com/digininja/DVWA
+
+2 Open SonarQube Click on create project and add an project name like " DVWA Source code review "
+
+3 Go to With the configuration best suited for you in this we will go manually with GitHub Actions
+
+4 we have to Create GitHub Secrets in our repository containing DVWA source code
+
+5 Create a " sonar-project.properties " file in your repository and paste the content mentioned in below :
 sonar.projectKey=DVWA-Source-code-review-
 
-Create or update your .github/workflows/build.ymland paste the content mentioned below::
+6 Create or update your .github/workflows/build.ymland paste the content mentioned below::
+
 " name: Build on:
  push:
    branches:
@@ -34,18 +39,18 @@ jobs
      #     SONAR_TOKEN: $Template:Secrets.SONAR TOKEN
 "
 
-Commit and push your code to start the analysis. Each new push you make on your main branch will trigger a new analysis in SonarQube
+7 Commit and push your code to start the analysis. Each new push you make on your main branch will trigger a new analysis in SonarQube
 
-Observations:
+# Observations:
 
-SonarQube will give you detailed analysis report within 5 minutes which will help you to improve your code quality
+1 SonarQube will give you detailed analysis report within 5 minutes which will help you to improve your code quality
 
-The results of analysis will be as following:
+2 The results of analysis will be as following:
 
-58 Bugs
-0 Vulnerabilities
-59 Security Hotspots
-404n Code Smells
-10.6% Duplications
+-58 Bugs
+-0 Vulnerabilities
+-59 Security Hotspots
+-404n Code Smells
+-10.6% Duplications
 
 You can then see the details of bugs , code smells , etc. found by clicking on then
